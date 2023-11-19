@@ -3,8 +3,11 @@ local telescope = require('telescope')
 telescope.setup{
     defaults = {
         file_ignore_patterns = {
-            ".git",
-            ".godot",
+            "[.]git",
+            "[.]godot",
+            ".*[.]png.*",
+            ".*[.]svg.*",
+            "addons.*[.]cfg"
         }
     }
 }

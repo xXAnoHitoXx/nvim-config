@@ -94,10 +94,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["dracula.nvim"] = {
+  ["feline.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula.nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
+    path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\feline.nvim",
+    url = "https://github.com/famiu/feline.nvim"
+  },
+  ["feline_one_monokai.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\feline_one_monokai.nvim",
+    url = "https://github.com/Hitesh-Aggarwal/feline_one_monokai.nvim"
   },
   harpoon = {
     loaded = true,
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
@@ -158,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Tin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   }
 }
 
