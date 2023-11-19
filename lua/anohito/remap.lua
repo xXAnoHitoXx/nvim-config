@@ -13,12 +13,12 @@ vim.keymap.set("n", "<C-h>", "<C-w>hzz")
 vim.keymap.set("n", "<C-i>", "<C-w>lzz")
 vim.keymap.set("n", "<leader>w", "<C-w>v")
 vim.keymap.set("n", "<leader>q", ":q<Enter>")
-vim.keymap.set("n", "<leader>q", ":q!<Enter>")
+vim.keymap.set("n", "<leader>Q", ":q!<Enter>")
 vim.keymap.set("n", "j",  "nzzzv")
 vim.keymap.set("n", "J", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("v", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<leader>p", [[viw"_dP]])
 vim.keymap.set("n", "<leader><leader>p", [["+p]])
 
