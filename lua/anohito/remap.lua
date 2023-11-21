@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>a", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>s", ":w<Enter>")
+
+-- git
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gp", ":G<space>push<CR>")
 
 --prime bindings
 vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
@@ -9,8 +12,8 @@ vim.keymap.set("v", "E", ":m '<-2<cr>gv=gv")
 vim.keymap.set("n", "N", "mzJ`z")
 vim.keymap.set("n", "<C-n>", "<C-d>zz")
 vim.keymap.set("n", "<C-e>", "<C-u>zz")
-vim.keymap.set("n", "<C-h>", "<C-w>hzz")
-vim.keymap.set("n", "<C-i>", "<C-w>lzz")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-i>", "<C-w>l")
 vim.keymap.set("n", "<leader>w", "<C-w>v")
 vim.keymap.set("n", "<leader>q", ":q<Enter>")
 vim.keymap.set("n", "<leader>Q", ":q!<Enter>")
@@ -19,16 +22,16 @@ vim.keymap.set("n", "J", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("v", "<leader>p", [["_dP]])
-vim.keymap.set("n", "<leader>p", [[viw"_dP]])
+vim.keymap.set("n", "<leader>p", [["_diwP]])
 vim.keymap.set("n", "<leader><leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set("v", "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>y", "viwy")
+vim.keymap.set("n", "<leader>y", "yiw")
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("v", "<leader>d", [["_d]])
-vim.keymap.set("n", "<leader>d", [[viw"_d]])
+vim.keymap.set({"v", "n"}, "<leader>d", [["_d]])
+vim.keymap.set("n", "<leader>D", [["_D]])
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader><leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

@@ -5,7 +5,7 @@ lsp_zero.on_attach(function(_, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "gf", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "rn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -26,6 +26,7 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
 lsp_zero.configure('gdscript', {
     force_setup = true, -- because the LSP is global. Read more on lsp-zero docs about this.
     single_file_support = false,
@@ -33,6 +34,7 @@ lsp_zero.configure('gdscript', {
     root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
     filetypes = {'gd', 'gdscript', 'gdscript3' },
 })
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 

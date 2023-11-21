@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    use 'nvim-tree/nvim-web-devicons'
+    use 'nvim-tree/nvim-tree.lua'
     use 'famiu/feline.nvim'
     use 'folke/tokyonight.nvim'
 
@@ -19,6 +21,7 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/playground'
     use 'theprimeagen/harpoon'
+    use 'tpope/vim-fugitive'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
