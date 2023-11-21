@@ -6,11 +6,16 @@ local api = require('nvim-tree.api')
 
 require("nvim-tree").setup({
     on_attach = function ()
-        vim.keymap.set("n", "<leader>a", function ()
+        vim.keymap.set("n", "<leader>at", function ()
             api.tree.toggle({find_file = true})
         end)
+        vim.keymap.set("n",  "<leader>al", api.tree.reload)
+        vim.keymap.set("n",  "<leader>ar", api.fs.rename)
+        vim.keymap.set("n",  "<leader>ad", api.fs.remove)
+        vim.keymap.set("n",  "<leader>an", api.node.navigate.diagnostics.next)
+        vim.keymap.set("n",  "<leader>ae", api.node.navigate.diagnostics.prev)
+        vim.keymap.set("n", "<leader>ac", api.tree.collapse_all)
         vim.keymap.set("n", "<CR>", api.node.open.edit)
-        vim.keymap.set("n", "<leader>c", api.tree.collapse_all)
         vim.keymap.set("n", "%", api.fs.create)
     end,
 

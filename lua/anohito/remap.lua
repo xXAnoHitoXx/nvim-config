@@ -6,8 +6,8 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gp", ":G<space>push<CR>")
 
 --prime bindings
-vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "E", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "N", ":m '>+1<CR>")
+vim.keymap.set("v", "E", ":m '<-2<cr>")
 
 vim.keymap.set("n", "N", "mzJ`z")
 vim.keymap.set("n", "<C-n>", "<C-d>zz")
