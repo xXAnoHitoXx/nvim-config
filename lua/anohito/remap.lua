@@ -10,8 +10,6 @@ vim.keymap.set("v", "N", ":m '>+1<CR>")
 vim.keymap.set("v", "E", ":m '<-2<CR>")
 
 vim.keymap.set("n", "N", "mzJ`z")
-vim.keymap.set("n", "<C-n>", "<C-d>zz")
-vim.keymap.set("n", "<C-e>", "<C-u>zz")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-i>", "<C-w>l")
 vim.keymap.set("n", "<leader>w", "<C-w>v")
@@ -36,23 +34,36 @@ vim.keymap.set("n", "<leader>D", [["_D]])
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader><leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
---colemak bindin
-vim.keymap.set("n", "n", "j")
-vim.keymap.set("n", "e", "k")
-vim.keymap.set("n", "i", "l")
-vim.keymap.set("n", "l", "i")
-vim.keymap.set("n", "k", "e")
+local function scroll_down()
+    local countl = vim.v.count1
+    vim.cmd("norm! "..countl.."j")
+    local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
+    local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
+    if(extra_scroll > 0) then
+        vim.cmd("norm! zb")
+        vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+    end
+end
 
-vim.keymap.set("v", "n", "j")
-vim.keymap.set("v", "e", "k")
-vim.keymap.set("v", "i", "l")
-vim.keymap.set("v", "l", "i")
-vim.keymap.set("v", "j", "n")
-vim.keymap.set("v", "k", "e")
+local function scroll_up()
+    local countl = vim.v.count1
+    vim.cmd("norm! "..countl.."k")
+    local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
+    local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
+    if(extra_scroll > 0) then
+        vim.cmd("norm! zb")
+        vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+    end
+end
 
-vim.keymap.set("o", "n", "j")
-vim.keymap.set("o", "e", "k")
-vim.keymap.set("o", "i", "l")
-vim.keymap.set("o", "l", "i")
-vim.keymap.set("o", "j", "n")
-vim.keymap.set("o", "k", "e")
+--colemak binding
+vim.keymap.set("n", "n", scroll_down)
+vim.keymap.set("n", "e", scroll_up)
+vim.keymap.set({"v", "o"}, "n", "j")
+vim.keymap.set({"v", "o"}, "e", "k")
+vim.keymap.set({"n", "v", "o"}, "i", "l")
+vim.keymap.set({"n", "v", "o"}, "l", "i")
+vim.keymap.set({"n", "v", "o"}, "k", "e")
+
+vim.keymap.set("n", "I", "L")
+vim.keymap.set("n", "L", "I")
