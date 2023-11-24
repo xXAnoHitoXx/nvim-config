@@ -37,22 +37,26 @@ vim.keymap.set("n", "<leader><leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left
 local function scroll_down()
     local countl = vim.v.count1
     vim.cmd("norm! "..countl.."j")
-    local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
-    local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
-    if(extra_scroll > 0) then
-        vim.cmd("norm! zb")
-        vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+    if(vim.fn.line('$') > vim.api.nvim_win_get_height(0)) then
+        local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
+        local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
+        if(extra_scroll > 0) then
+            vim.cmd("norm! zb")
+            vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+        end
     end
 end
 
 local function scroll_up()
     local countl = vim.v.count1
     vim.cmd("norm! "..countl.."k")
-    local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
-    local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
-    if(extra_scroll > 0) then
-        vim.cmd("norm! zb")
-        vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+    if(vim.fn.line('$') > vim.api.nvim_win_get_height(0)) then
+        local cursor_pos = math.min(vim.fn.line('$'), vim.fn.line('.') + countl)
+        local extra_scroll = vim.o.scrolloff - (vim.fn.line('$') - cursor_pos)
+        if(extra_scroll > 0) then
+            vim.cmd("norm! zb")
+            vim.cmd("norm! "..extra_scroll..vim.api.nvim_replace_termcodes("<C-e>", true, false, true))
+        end
     end
 end
 
