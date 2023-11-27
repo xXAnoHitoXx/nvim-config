@@ -12,6 +12,8 @@ require("nvim-tree").setup({
         vim.keymap.set("n",  "<leader>al", api.tree.reload)
         vim.keymap.set("n",  "<leader>ar", api.fs.rename)
         vim.keymap.set("n",  "<leader>ad", api.fs.remove)
+        vim.keymap.set("n",  "<leader>ax", api.fs.cut)
+        vim.keymap.set("n",  "<leader>ap", api.fs.paste)
         vim.keymap.set("n",  "<leader>an", api.node.navigate.diagnostics.next)
         vim.keymap.set("n",  "<leader>ae", api.node.navigate.diagnostics.prev)
         vim.keymap.set("n", "<leader>ac", api.tree.collapse_all)
