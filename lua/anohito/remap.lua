@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>s", ":w<Enter>")
+vim.keymap.set("n", "<leader>s", ":w<CR>")
 
 -- git
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
@@ -24,8 +24,7 @@ vim.keymap.set("n", "<leader>p", [["_diwP]])
 vim.keymap.set("n", "<leader><leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set("v", "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>y", "yiw")
+vim.keymap.set({"v", "n"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({"v", "n"}, "<leader>d", [["_d]])
