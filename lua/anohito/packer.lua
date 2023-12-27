@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
         }
     }
     use 'mfussenegger/nvim-dap'
+    use 'simrat39/rust-tools.nvim'
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
 end)
