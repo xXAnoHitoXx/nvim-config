@@ -32,6 +32,16 @@ vim.keymap.set("n", "<leader>D", [["_D]])
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader><leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>ll", "/[\\]})\"'>]<CR>")
+vim.keymap.set("n", "<leader>LL", "?[\\[{(\"'<]<CR>")
+vim.keymap.set("n", "<leader>lg", "/)<CR>")
+vim.keymap.set("n", "<leader>Lg", "?(<CR>")
+vim.keymap.set("n", "<leader>lt", "/}<CR>")
+vim.keymap.set("n", "<leader>Lt", "?{<CR>")
+vim.keymap.set("n", "<leader>ls", "/]<CR>")
+vim.keymap.set("n", "<leader>Ls", "?[<CR>")
+vim.keymap.set("n", "<leader>l,", "/><CR>")
+vim.keymap.set("n", "<leader>L,", "?<<CR>")
 
 --split
 vim.keymap.set("n", "<leader>h", "<C-w>h")

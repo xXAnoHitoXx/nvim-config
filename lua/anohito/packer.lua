@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    use 'BurntSushi/ripgrep'
+
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
     use 'famiu/feline.nvim'
@@ -20,6 +22,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/playground'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'theprimeagen/harpoon'
     use 'tpope/vim-fugitive'
 
@@ -45,4 +48,6 @@ return require('packer').startup(function(use)
     use 'simrat39/rust-tools.nvim'
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
+    use 'rust-lang/rust.vim'
+    use 'kylechui/nvim-surround'
 end)

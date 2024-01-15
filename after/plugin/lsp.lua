@@ -55,6 +55,8 @@ rt.setup({
     },
 })
 
+vim.g.rustfmt_autosave = 1
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
